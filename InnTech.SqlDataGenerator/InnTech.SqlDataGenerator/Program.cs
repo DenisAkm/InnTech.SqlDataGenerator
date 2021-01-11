@@ -6,6 +6,7 @@ using System.Text.Json;
 
 namespace InnTech.SqlDataGenerator
 {
+    //Build as Single File: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
     class Program
     {
         static string ProgramName = "SqlDataGenerator";
@@ -18,9 +19,7 @@ namespace InnTech.SqlDataGenerator
         static void Main(string[] args)
         {
             try
-            {
-                //CreateAppSettings();
-                //return;
+            {   
                 var appSettings = ReadAppSettings();
 
                 var client = new MssqlConnectionUtils(appSettings.ConnectionString);
@@ -79,18 +78,6 @@ namespace InnTech.SqlDataGenerator
             };
 
             return JsonSerializer.Deserialize<GeneratorSettings>(jsonTextReader, options);
-        }
-
-
-        private static void CreateAppSettings()
-        {
-            string optionsFilePath = Path.Combine(Environment.CurrentDirectory, "testSettings.json");
-
-            var appSettings = new GeneratorSettings();
-            var json = JsonSerializer.Serialize(appSettings);
-
-            using var sw = new StreamWriter(optionsFilePath, append: true);
-            sw.Write(json);
         }
     }
 }
