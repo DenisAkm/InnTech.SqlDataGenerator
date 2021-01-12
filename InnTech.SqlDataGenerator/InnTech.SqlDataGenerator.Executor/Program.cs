@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace InnTech.SqlDataGenerator
+namespace InnTech.SqlDataGenerator.Executor
 {
     //Build as Single File: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
     class Program
@@ -19,7 +19,7 @@ namespace InnTech.SqlDataGenerator
         static void Main(string[] args)
         {
             try
-            {   
+            {
                 var appSettings = ReadAppSettings();
 
                 var client = new MssqlConnectionUtils(appSettings.ConnectionString);
@@ -72,9 +72,9 @@ namespace InnTech.SqlDataGenerator
             using var streamReader = new StreamReader(optionsFilePath);
             var jsonTextReader = streamReader.ReadToEnd();
 
-            var options = new JsonSerializerOptions 
+            var options = new JsonSerializerOptions
             {
-                ReadCommentHandling = JsonCommentHandling.Skip 
+                ReadCommentHandling = JsonCommentHandling.Skip
             };
 
             return JsonSerializer.Deserialize<GeneratorSettings>(jsonTextReader, options);
