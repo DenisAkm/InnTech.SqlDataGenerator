@@ -3,3 +3,6 @@
 ################################################################################
 
 /InnTech.SqlDataGenerator/InnTech.SqlDataGenerator/bin/Release/netcoreapp3.1
+/InnTech.SqlDataGenerator/InnTech.SqlDataGenerator/obj/Release/netcoreapp3.1/win-x64
+/InnTech.SqlDataGenerator/InnTech.SqlDataGenerator.Executor/bin/Release/netcoreapp3.1
+/InnTech.SqlDataGenerator/InnTech.SqlDataGenerator.Executor/obj/Release/netcoreapp3.1
