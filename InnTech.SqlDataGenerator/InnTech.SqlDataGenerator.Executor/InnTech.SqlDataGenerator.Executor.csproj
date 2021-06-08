@@ -9,4 +9,10 @@
     <ProjectReference Include="..\InnTech.SqlDataGenerator\InnTech.SqlDataGenerator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="AppSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
